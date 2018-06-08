@@ -350,7 +350,8 @@ export default {
           street_number: 'short_name',
           route: 'long_name',
           locality: 'long_name',
-          administrative_area_level_1: 'short_name',
+          administrative_area_level_1: 'long_name',
+          administrative_area_level_2: 'short_name',
           country: 'long_name',
           postal_code: 'short_name',
         };
@@ -374,7 +375,7 @@ export default {
 
           returnData.latitude = place.geometry.location.lat();
           returnData.longitude = place.geometry.location.lng();
-          
+
           // additional fields available in google places results
           returnData.name = place.name
           returnData.photos = place.photos
