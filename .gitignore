@@ -3,3 +3,5 @@ node_modules
 mix-manifest.json
 example/dist
 dist
+/yarn.lock
+/.gitignore

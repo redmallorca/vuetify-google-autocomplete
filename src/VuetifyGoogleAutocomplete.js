@@ -37,6 +37,10 @@ export default {
       type: [String, Array],
       default: null,
     },
+    language: {
+      type: String,
+      default: null,
+    },
     dark: {
       type: Boolean,
       default: false,
@@ -320,6 +324,10 @@ export default {
         options.types = [this.types];
       }
 
+      if (this.language) {
+        options.language = [this.language];
+      }
+
       if (this.country) {
         options.componentRestrictions = {
           country: this.country,
@@ -380,6 +388,8 @@ export default {
           returnData.name = place.name
           returnData.photos = place.photos
           returnData.place_id = place.place_id
+          returnData.phone_number = place.formatted_phone_number
+          returnData.website = place.website
 
           // return returnData object and PlaceResult object
           this.$emit('placechanged', returnData, place, this.id);
